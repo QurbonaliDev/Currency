@@ -1,0 +1,14 @@
+
+entity Currency{
+    id Long
+    code String
+    ccy String
+    ccyName String
+    rate BigDecimal
+    date String
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceImpl
+
