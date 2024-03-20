@@ -1,0 +1,28 @@
+{
+  "currencyApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "リストの更新",
+        "createLabel": "Currency の作成",
+        "createOrEditLabel": "Currencyの作成または編集",
+        "notFound": "Currencies が見つかりません。"
+      },
+      "created": "新しい Currency がID {{ param }} で作成されました。",
+      "updated": "ID {{ param }} の Currency が更新されました。",
+      "deleted": "ID {{ param }} の Currency が削除されました。",
+      "delete": {
+        "question": "Currency {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "Id",
+      "code": "Code",
+      "ccy": "Ccy",
+      "ccyName": "Ccy Name",
+      "rate": "Rate",
+      "date": "Date"
+    }
+  }
+}

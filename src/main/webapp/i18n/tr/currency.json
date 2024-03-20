@@ -1,0 +1,28 @@
+{
+  "currencyApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "Listeyi yenile",
+        "createLabel": "Yeni Currency ekle",
+        "createOrEditLabel": "Yeni Currency ekle veya guncelle",
+        "notFound": "Currencies kaydi bulunamadi"
+      },
+      "created": "{{ param }} ID ile bir Currency eklendi",
+      "updated": "{{ param }} nolu Currency guncellendi",
+      "deleted": "{{ param }} nolu Currency silindi",
+      "delete": {
+        "question": "{{ id }} nolu Currency silinecek. Devem etmek istiyor musunuz?"
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "Id",
+      "code": "Code",
+      "ccy": "Ccy",
+      "ccyName": "Ccy Name",
+      "rate": "Rate",
+      "date": "Date"
+    }
+  }
+}

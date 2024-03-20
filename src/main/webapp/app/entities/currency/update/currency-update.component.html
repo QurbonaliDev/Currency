@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-currency-heading" data-cy="CurrencyCreateUpdateHeading" jhiTranslate="currencyApp.currency.home.createOrEditLabel">
+        Create or edit a Currency
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="currencyApp.currency.id" for="field_id">Id</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="currencyApp.currency.code" for="field_code">Code</label>
+          <input type="text" class="form-control" name="code" id="field_code" data-cy="code" formControlName="code" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="currencyApp.currency.ccy" for="field_ccy">Ccy</label>
+          <input type="text" class="form-control" name="ccy" id="field_ccy" data-cy="ccy" formControlName="ccy" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="currencyApp.currency.ccyName" for="field_ccyName">Ccy Name</label>
+          <input type="text" class="form-control" name="ccyName" id="field_ccyName" data-cy="ccyName" formControlName="ccyName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="currencyApp.currency.rate" for="field_rate">Rate</label>
+          <input type="number" class="form-control" name="rate" id="field_rate" data-cy="rate" formControlName="rate" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="currencyApp.currency.date" for="field_date">Date</label>
+          <input type="text" class="form-control" name="date" id="field_date" data-cy="date" formControlName="date" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

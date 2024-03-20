@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (currency) {
+      <div>
+        <h2 data-cy="currencyDetailsHeading"><span jhiTranslate="currencyApp.currency.detail.title">Currency</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="currencyApp.currency.id">Id</span></dt>
+          <dd>
+            <span>{{ currency.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="currencyApp.currency.code">Code</span></dt>
+          <dd>
+            <span>{{ currency.code }}</span>
+          </dd>
+          <dt><span jhiTranslate="currencyApp.currency.ccy">Ccy</span></dt>
+          <dd>
+            <span>{{ currency.ccy }}</span>
+          </dd>
+          <dt><span jhiTranslate="currencyApp.currency.ccyName">Ccy Name</span></dt>
+          <dd>
+            <span>{{ currency.ccyName }}</span>
+          </dd>
+          <dt><span jhiTranslate="currencyApp.currency.rate">Rate</span></dt>
+          <dd>
+            <span>{{ currency.rate }}</span>
+          </dd>
+          <dt><span jhiTranslate="currencyApp.currency.date">Date</span></dt>
+          <dd>
+            <span>{{ currency.date }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/currency', currency.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

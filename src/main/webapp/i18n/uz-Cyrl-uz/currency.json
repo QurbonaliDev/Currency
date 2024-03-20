@@ -1,0 +1,28 @@
+{
+  "currencyApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Янги Currency қўшиш",
+        "createOrEditLabel": "Currencyни таҳрирлаш",
+        "notFound": "No Currencies found"
+      },
+      "created": "Currency {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Currency сақланди.",
+      "deleted": "{{ param }}- Currency ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Currencyни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "Id",
+      "code": "Code",
+      "ccy": "Ccy",
+      "ccyName": "Ccy Name",
+      "rate": "Rate",
+      "date": "Date"
+    }
+  }
+}

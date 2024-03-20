@@ -1,0 +1,28 @@
+{
+  "currencyApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Yangi Currency qo`shish",
+        "createOrEditLabel": "Currencyni tahrirlash",
+        "notFound": "No Currencies found"
+      },
+      "created": "Currency {{ param }} bilan qo`shildi",
+      "updated": "{{ param }}- Currency saqlandi",
+      "deleted": "{{ param }}- Currency o`chirildi",
+      "delete": {
+        "question": "{{ id }}- Currencyni o`chirmoqchimisiz? "
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "Id",
+      "code": "Code",
+      "ccy": "Ccy",
+      "ccyName": "Ccy Name",
+      "rate": "Rate",
+      "date": "Date"
+    }
+  }
+}

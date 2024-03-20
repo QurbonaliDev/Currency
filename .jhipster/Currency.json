@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240315032318"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "currency",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ccy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ccyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Currency",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
