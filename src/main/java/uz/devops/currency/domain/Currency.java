@@ -1,8 +1,10 @@
 package uz.devops.currency.domain;
 
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -20,13 +22,13 @@ public class Currency implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "code")
+    @Column(name = "code", nullable = false, length = 3)
     private String code;
 
-    @Column(name = "ccy")
+    @Column(name = "ccy", unique = true)
     private String ccy;
 
     @Column(name = "ccy_name")

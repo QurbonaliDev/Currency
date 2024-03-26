@@ -214,15 +214,16 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
     }
 
     private HttpHeaders buildHeaders(Throwable err) {
-        return err instanceof BadRequestAlertException badRequestAlertException
-            ? HeaderUtil.createFailureAlert(
-                applicationName,
-                true,
-                badRequestAlertException.getEntityName(),
-                badRequestAlertException.getErrorKey(),
-                badRequestAlertException.getMessage()
-            )
-            : null;
+//        return err instanceof BadRequestAlertException badRequestAlertException
+//            ? HeaderUtil.createFailureAlert(
+//                applicationName,
+//                true,
+//                badRequestAlertException.getEntityName(),
+//                badRequestAlertException.getErrorKey(),
+//                badRequestAlertException.getMessage()
+//            )
+//            : null;
+        return null;
     }
 
     public Optional<ProblemDetailWithCause> buildCause(final Throwable throwable, NativeWebRequest request) {

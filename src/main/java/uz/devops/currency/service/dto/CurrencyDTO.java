@@ -1,7 +1,5 @@
 package uz.devops.currency.service.dto;
 
-import static uz.devops.currency.domain.Currency_.ccyName;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -41,7 +39,7 @@ public class CurrencyDTO implements Serializable {
     private String ccyNm_UZ;
 
     @JsonProperty("Rate")
-    private String rate;
+    private BigDecimal rate;
 
     @JsonProperty("Date")
     private String date;
@@ -54,6 +52,46 @@ public class CurrencyDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCcyNm_RU() {
+        return ccyNm_RU;
+    }
+
+    public void setCcyNm_RU(String ccyNm_RU) {
+        this.ccyNm_RU = ccyNm_RU;
+    }
+
+    public String getCcyNm_UZC() {
+        return ccyNm_UZC;
+    }
+
+    public void setCcyNm_UZC(String ccyNm_UZC) {
+        this.ccyNm_UZC = ccyNm_UZC;
+    }
+
+    public String getCcyNm_EN() {
+        return ccyNm_EN;
+    }
+
+    public void setCcyNm_EN(String ccyNm_EN) {
+        this.ccyNm_EN = ccyNm_EN;
+    }
+
+    public String getNominal() {
+        return nominal;
+    }
+
+    public void setNominal(String nominal) {
+        this.nominal = nominal;
+    }
+
+    public String getDiff() {
+        return diff;
+    }
+
+    public void setDiff(String diff) {
+        this.diff = diff;
     }
 
     public String getCode() {
@@ -72,20 +110,20 @@ public class CurrencyDTO implements Serializable {
         this.ccy = ccy;
     }
 
-    public String getCcyName() {
-        return ccyName;
+    public String getCcyNm_UZ() {
+        return ccyNm_UZ;
     }
 
-    public void setCcyName(String ccyName) {
-        this.ccyName = ccyName;
+    public void setCcyNm_UZ(String ccyNm_UZ) {
+        this.ccyNm_UZ = ccyNm_UZ;
     }
 
-    public String getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
     public void setRate(BigDecimal rate) {
-        this.rate = String.valueOf(rate);
+        this.rate = rate;
     }
 
     public String getDate() {
@@ -94,6 +132,14 @@ public class CurrencyDTO implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getCcyName() {
+        return ccyName;
+    }
+
+    public void setCcyName(String ccyName) {
+        this.ccyName = ccyName;
     }
 
     @Override
@@ -118,15 +164,25 @@ public class CurrencyDTO implements Serializable {
     }
 
     // prettier-ignore
+
+
     @Override
     public String toString() {
         return "CurrencyDTO{" +
-            "id=" + getId() +
-            ", Code='" + getCode() + "'" +
-            ", ccy='" + getCcy() + "'" +
-            ", ccyName='" + getCcyName() + "'" +
-            ", rate=" + getRate() +
-            ", date='" + getDate() + "'" +
-            "}";
+            "id=" + id +
+            ", ccyNm_RU='" + ccyNm_RU + '\'' +
+            ", ccyNm_UZC='" + ccyNm_UZC + '\'' +
+            ", ccyNm_EN='" + ccyNm_EN + '\'' +
+            ", nominal='" + nominal + '\'' +
+            ", diff='" + diff + '\'' +
+            ", code='" + code + '\'' +
+            ", ccy='" + ccy + '\'' +
+            ", ccyNm_UZ='" + ccyNm_UZ + '\'' +
+            ", rate=" + rate +
+            ", date='" + date + '\'' +
+            ", ccyName='" + ccyName + '\'' +
+            '}';
     }
+
+
 }

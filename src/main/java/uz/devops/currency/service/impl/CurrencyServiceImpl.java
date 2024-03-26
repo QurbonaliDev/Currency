@@ -1,9 +1,5 @@
 package uz.devops.currency.service.impl;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
@@ -20,6 +16,11 @@ import uz.devops.currency.repository.CurrencyRepository;
 import uz.devops.currency.service.CurrencyService;
 import uz.devops.currency.service.dto.CurrencyDTO;
 import uz.devops.currency.service.mapper.CurrencyMapper;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Service Implementation for managing {@link uz.devops.currency.domain.Currency}.
@@ -97,7 +98,8 @@ public class CurrencyServiceImpl implements CurrencyService {
             "https://cbu.uz/uz/arkhiv-kursov-valyut/json/",
             HttpMethod.GET,
             null,
-            new ParameterizedTypeReference<>() {}
+            new ParameterizedTypeReference<>() {
+            }
         );
         return response.getBody();
     }
@@ -107,7 +109,8 @@ public class CurrencyServiceImpl implements CurrencyService {
             "https://cbu.uz/uz/arkhiv-kursov-valyut/json/",
             HttpMethod.GET,
             null,
-            new ParameterizedTypeReference<>() {}
+            new ParameterizedTypeReference<>() {
+            }
         );
 
         if (response.getStatusCode() == HttpStatus.OK) {
@@ -119,12 +122,25 @@ public class CurrencyServiceImpl implements CurrencyService {
         return response.getBody();
     }
 
-    @Override
-    public Currency getCurrencyById(Long currencyId) {
-        Currency currency = new Currency();
-        currency.getId();
-        return currency;
-    }
+//    @Override
+//    public CurrencyDTO checkCurrencyCcyForSave() throws IOException {
+//        if(currencyRepository.existsByCCy(currencyRepository.){
+//            throwBadRequestAlertExceptionForUniqueFields(currencyRepository.);
+//        };
+//    }
+//
+//    @Override
+//    public void throwBadRequestAlertExceptionForUniqueFields(String message) {
+//        throw new BadRequestAlertException(
+//            message,
+//            ENTITY_NAME,
+//            ErrorKey.UNIQUE_FIELDS,
+//            HttpStatus.BAD_REQUEST,
+//            ZonedDateTime.now(ZoneId.of("Z"))
+//        );
+//
+//    }
+
 
     private void saveToDatabase(List<CurrencyDTO> currencyDTOList) {
         List<Currency> currencyList = mapToEntities(currencyDTOList);
@@ -133,14 +149,24 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     private List<Currency> mapToEntities(List<CurrencyDTO> currencyDTOList) {
         List<Currency> currencyList = new ArrayList<>();
+        Currency currencyCheck = new Currency();
+        if (currencyCheck.getCcy() != null) {
+            currencyRepository.deleteAll();
+        }
         for (CurrencyDTO currencyDTO : currencyDTOList) {
             Currency currency = new Currency();
             currency.setId(currencyDTO.getId());
             currency.setCode(currencyDTO.getCode());
             currency.setCcy(currencyDTO.getCcy());
-            currency.setCcyName(currencyDTO.getCcyName());
+            currency.setCcyName(currencyDTO.getCcyNm_UZ());
+            currency.setRate(currencyDTO.getRate());
+            currency.setDate(currencyDTO.getDate());
             currencyList.add(currency);
         }
         return currencyList;
+    }
+
+    public Currency save(Currency currency) {
+        return currencyRepository.save(currency);
     }
 }

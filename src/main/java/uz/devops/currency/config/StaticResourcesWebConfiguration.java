@@ -1,6 +1,5 @@
 package uz.devops.currency.config;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.CacheControl;
@@ -9,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import tech.jhipster.config.JHipsterConstants;
 import tech.jhipster.config.JHipsterProperties;
+
+import java.time.Duration;
 
 @Configuration
 @Profile({ JHipsterConstants.SPRING_PROFILE_PRODUCTION })
@@ -50,7 +51,7 @@ public class StaticResourcesWebConfiguration implements WebMvcConfigurer {
     }
 
     protected CacheControl getCacheControl() {
-        return CacheControl.maxAge(getJHipsterHttpCacheProperty(), TimeUnit.DAYS).cachePublic();
+        return CacheControl.maxAge(Duration.ofDays(getJHipsterHttpCacheProperty())).cachePublic();
     }
 
     private int getJHipsterHttpCacheProperty() {

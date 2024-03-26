@@ -9,4 +9,5 @@ import uz.devops.currency.domain.Currency;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CurrencyRepository extends JpaRepository<Currency, Long> {}
+public interface CurrencyRepository extends JpaRepository<Currency, Long> {
+}

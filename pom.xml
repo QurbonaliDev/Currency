@@ -282,11 +282,21 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+
+
+
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>3.42.0</version>
         </dependency>
     </dependencies>
 

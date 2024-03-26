@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import uz.devops.currency.domain.Currency;
 import uz.devops.currency.service.dto.CurrencyDTO;
 
@@ -61,5 +62,8 @@ public interface CurrencyService {
     List<CurrencyDTO> sync() throws IOException;
     List<CurrencyDTO> syncAndSaveToDatabase() throws IOException;
 
-    Currency getCurrencyById(Long currencyId);
+//    CurrencyDTO checkCurrencyCcyForSave() throws IOException;
+//
+//    void throwBadRequestAlertExceptionForUniqueFields(String message);
+
 }
